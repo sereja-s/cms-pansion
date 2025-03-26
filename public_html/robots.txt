@@ -1,0 +1,12 @@
+User-agent: * 
+Disallow:/admin/
+Host: saitpostroen.ru
+Sitemap: https://saitpostroen.ru/sitemap.xml
+
+User-agent: Yandex  
+Disallow:/admin/
+Sitemap: https://saitpostroen.ru/sitemap.xml
+
+User-agent: Googlebot  
+Disallow:/admin/
+Sitemap: https://saitpostroen.ru/sitemap.xml
