@@ -72,7 +72,7 @@ class Settings
 	private $messages = 'core/base/messages/';
 
 	// свойство с таблицей по умолчанию
-	private $defaultTable = 'users';
+	private $defaultTable = 'settings';
 
 	// свойство в котором хранится путь к шаблонам админки
 	private $formTemplates = PATH . 'core/admin/view/include/form_templates/';
@@ -87,15 +87,14 @@ class Settings
 		'websites' => ['name' => 'Сайты'],
 		'site_categories' => ['name' => 'Виды сайтов'],
 		'socials' => ['name' => 'Соц.сети'],
-		'users' => ['name' => 'Пользователи'],
 	];
 
 	// свойство: массив шаблонов
 	private $templateArr = [
 
 		// массив вида: 'название шаблона' => массив с полями для которых должен быть подключен соответствующий шаблон
-		'text' => ['name', 'year', 'phone', 'email', 'alias', 'section_id', 'external_alias', 'sub_title', 'number_of_years', 'discount', 'price', 'login', 'password', 'map_coordinates', 'scroll_to'],
-		'textarea' => ['content', 'keywords', 'address', 'map_address', 'address_big', 'description', 'short_content'],
+		'text' => ['name', 'year', 'phone', 'phone_two', 'email', 'alias', 'section_id', 'external_alias', 'sub_title', 'number_of_years', 'discount', 'price', 'login', 'password', 'map_coordinates', 'scroll_to'],
+		'textarea' => ['content', 'keywords', 'address', 'work_time', 'map_address', 'address_big', 'description', 'short_content'],
 		'radio' => ['visible', 'show_top_menu', 'hit', 'sale', 'new', 'hot'],
 		'checkboxlist' => ['filters', 'filters_test'], // указали, что хотим подключить фильтры к связанной таблице: 
 		// товары (они прописаны в массиве: в свойстве: private $manyToMany)
@@ -116,6 +115,7 @@ class Settings
 		'content' => ['Описание', '(Текстовая часть, фотографии, картинки к описанию)'],
 		'description' => ['SEO описание'],
 		'phone' => ['Телефон'],
+		'phone_two' => ['Телефон-2'],
 		'email' => ['Электронная почта'],
 		'address' => ['Адрес'],
 		'address_big' => ['детали адреса'],
@@ -144,9 +144,10 @@ class Settings
 		'promo_img' => ['Изображение для главной страницы'],
 		'login' => ['Логин'],
 		'password' => ['Пароль', '(зашифрован md5)'],
-		'map_coordinates' => ['координаты карты', '(пример: 47.991522, 37.798313)'],
+		'map_coordinates' => ['координаты карты', '(пример: 47.995140, 37.683212)'],
 		'map_address' => ['адрес на карте'],
 		'scroll_to' => ['указатель на раздел'],
+		'work_time' => ['График работы']
 		//'filters' => ['Категории фильтров']
 	];
 

@@ -6,7 +6,7 @@
 		<div class="main-slider__item lazy swiper-slide">
 			<div class="main-slider__content">
 				<h2 class="main-slider__title">
-					Пансион для пожилых людей "Осень жизни" в г.Донецке
+					Пансион для пожилых людей "Осень жизни" в г. Донецке
 				</h2>
 				<p class="main-slider__text">
 					Учереждение для пожилых людей и инвалидов. Мы обеспечиваем уход и заботу в круглосуточном режиме. Производится мониторинг состояния здоровья. В пансионате постоянно дежурит младший медицинский персонал с большим опытом работы. Мы рады дарить людям заботу, тепло и уют, чтобы каждый чувствовал свою значимость и ценность в этом мире
@@ -113,16 +113,10 @@
 <section class="blog">
 	<div class="container">
 		<h2 class="title blog__title" style="text-align: center; font-size: 36px;">Поселение:</h2>
-		<p style="font-size: 22px;">
-			Чтобы определить человека в пансион необходимо предоставить руководству пансиона следующие документы:<br>
-			- амбулаторная карточка (с подробной свежей записью терапевта о диагнозах и назначениях);<br>
-			- флюорография;<br>
-			- справка терапевта об эпидокружении;<br>
-			- СНИЛС;<br>
-			- ОМС;<br>
-			- ксерокопии паспорта.
-		</p>
-		<p class="blog__text" style="font-size: 24px; text-align: center;">Мы рады принять всех желающих в свою большую и дружную семью!</p>
+		<div style="font-size: 22px;">
+			<?= $this->set['content'] ?>
+		</div>
+		<p class="blog__text" style="font-size: 24px; text-align: center;"><?= $this->set['short_content'] ?></p>
 		<!-- <div class="blog__items">
 
 		  <div class="blog-card">
@@ -249,40 +243,53 @@
 		</header>
 		<div class="contacts">
 			<div class="contacts__start">
-				<div class="contacts__map" id="ymap" data-coordinates="47.995140, 37.683212"
-					data-address="улица Фета, 37А"></div>
+				<div class="contacts__map" id="ymap" data-coordinates="<?= $this->set['map_coordinates'] ?>"
+					data-address="<?= $this->set['map_address'] ?>"></div>
 			</div>
 			<div class="contacts__end">
 				<div class="contacts__item">
 					<h3 class="contacts__title">Адрес</h3>
-					<p class="contacts__text">г. Донецк, ул. Фета, 37 "Б" (возле 2-го МРЭО)</p>
+					<p class="contacts__text"><?= $this->set['address'] ?></p>
+					<p class="contacts__text" style="font-weight: 700;"><?= $this->set['work_time'] ?></p>
 				</div>
 				<div class="contacts__item">
 					<h3 class="contacts__title">Телефон</h3>
 					<p class="contacts__text" style="padding-bottom: 10px;">
-						<a class="contacts__phone" href="tel:+79117112123">+7(949)407-90-93</a>
+						<a class="contacts__phone" href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone']) ?>"><?= $this->set['phone'] ?></a>
 					</p>
 					<p class="contacts__text">
-						<a class="contacts__phone" href="tel:+79117112123">+7(949)613-89-80</a>
+						<a class="contacts__phone" href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone_two']) ?>"><?= $this->set['phone_two'] ?></a>
 					</p>
 				</div>
 				<div class="contacts__item">
-					<h3 class="contacts__title">Социальные сети</h3>
-					<ul class="socials">
-						<li class="socials__item">
-							<a href="#" class="socials__link" target="_blank">
-								<svg class="socials__icon socials__icon--vk" xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 112.2 112.2" width="35" height="35">
-									<g>
-										<circle cx="56.1" cy="56.1" r="56.1" />
-										<path class="socials__logo"
-											d="M54,80.7h4.4a3.33,3.33,0,0,0,2-.9,3.37,3.37,0,0,0,.6-1.9s-.1-5.9,2.7-6.8,6.2,5.7,9.9,8.2c2.8,1.9,4.9,1.5,4.9,1.5l9.8-.1s5.1-.3,2.7-4.4c-.2-.3-1.4-3-7.3-8.5-6.2-5.7-5.3-4.8,2.1-14.7,4.5-6,6.3-9.7,5.8-11.3s-3.9-1.1-3.9-1.1l-11.1.1a2.32,2.32,0,0,0-1.4.3,3.58,3.58,0,0,0-1,1.2A60,60,0,0,1,70,50.9c-4.9,8.4-6.9,8.8-7.7,8.3-1.9-1.2-1.4-4.9-1.4-7.5,0-8.1,1.2-11.5-2.4-12.4a17.68,17.68,0,0,0-5.2-.5c-4,0-7.3,0-9.2.9-1.3.6-2.2,2-1.6,2.1a5.05,5.05,0,0,1,3.3,1.6c1.1,1.5,1.1,5,1.1,5s.7,9.6-1.5,10.7c-1.5.8-3.5-.8-7.9-8.4a67.05,67.05,0,0,1-4-8.2,2.82,2.82,0,0,0-.9-1.2,5.13,5.13,0,0,0-1.7-.7l-10.5.1s-1.6,0-2.2.7,0,1.9,0,1.9,8.2,19.3,17.6,29c8.5,9,18.2,8.4,18.2,8.4Z" />
-									</g>
-								</svg>
-							</a>
-						</li>
-					</ul>
+					<h3 class="contacts__title">Эл. почта</h3>
+					<p class="contacts__text" style="padding-bottom: 10px;">
+						<a class="contacts__phone" href="mailto:<?= $this->set['email'] ?>"><?= $this->set['email'] ?></a>
+					</p>
 				</div>
+
+				<?php if (!empty($this->socials)) : ?>
+
+					<div class="contacts__item">
+						<h3 class="contacts__title">Социальные сети</h3>
+						<ul class="socials">
+
+
+							<?php foreach ($this->socials as $item) : ?>
+
+								<li class="socials__item" style="padding-right: 10px;">
+									<a href="<?= $this->alias($item['external_alias']) ?>" class="socials__link">
+										<img style="max-width: 50px" src="<?= $this->img($item['img']) ?>" alt="<?= $item['name'] ?>">
+									</a>
+								</li>
+
+							<?php endforeach; ?>
+
+
+						</ul>
+					</div>
+
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
