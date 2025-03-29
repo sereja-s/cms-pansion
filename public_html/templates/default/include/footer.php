@@ -40,7 +40,7 @@
 					<a class="phone__item phone__item--accent" href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone_two']) ?>"><?= $this->set['phone_two'] ?></a>
 				</div>
 				<div class="phone popup__phone">
-					<a class="phone__item phone__item--accent" href="mailto:<?= $this->set['email'] ?>"><?= $this->set['email'] ?></a>
+					<a class="phone__item phone__item--accent" style="color: rgb(44, 125, 212);" href="mailto:<?= $this->set['email'] ?>"><?= $this->set['email'] ?></a>
 				</div>
 
 				<?php if (!empty($this->socials)) : ?>

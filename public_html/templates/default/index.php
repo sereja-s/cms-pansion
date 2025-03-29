@@ -1,49 +1,36 @@
-<!-- section-top -->
-<section class="main-slider swiper">
+<?php if (!empty($section_top)) : ?>
 
-	<div class="main-slider__inner swiper-wrapper">
+	<!-- section-top -->
+	<section class="main-slider swiper">
 
-		<div class="main-slider__item lazy swiper-slide">
-			<div class="main-slider__content">
-				<h2 class="main-slider__title">
-					Пансион для пожилых людей "Осень жизни" в г. Донецке
-				</h2>
-				<p class="main-slider__text">
-					Учереждение для пожилых людей и инвалидов. Мы обеспечиваем уход и заботу в круглосуточном режиме. Производится мониторинг состояния здоровья. В пансионате постоянно дежурит младший медицинский персонал с большим опытом работы. Мы рады дарить людям заботу, тепло и уют, чтобы каждый чувствовал свою значимость и ценность в этом мире
-				</p>
+		<div class="main-slider__inner swiper-wrapper">
 
-			</div>
-			<img class="main-slider__img" src="<?= TEMPLATE ?>/assets/images/head-slider/осень жизни на главную.jpg" alt="slide image">
+			<?php foreach ($section_top as $item) : ?>
+
+				<div class="main-slider__item lazy swiper-slide">
+					<div class="main-slider__content">
+						<h2 class="main-slider__title">
+
+							<?= $item['name'] ?>
+
+						</h2>
+						<p class="main-slider__text">
+
+							<?= $item['short_content'] ?>
+
+						</p>
+
+					</div>
+					<img class="main-slider__img" src="<?= $this->img($item['img']) ?>" alt="<?= $this->set['name'] ?>">
+				</div>
+
+			<?php endforeach; ?>
+
 		</div>
 
-		<div class="main-slider__item swiper-slide">
-			<div class="main-slider__content">
-				<h2 class="main-slider__title">
-					Благоустроенная территория
-				</h2>
-				<p class="main-slider__text">
-					Для прогулок проложены дорожки, установлены скамейки и уютные беседки, где удобно отдыхать и наслаждаться красотой природы. В пансионате "Осень жизни" жильцы имеют высокий уровень соцализации, они постоянно общаются с соседями и сотрудниками.
-				</p>
+	</section>
 
-			</div>
-			<img class="main-slider__img" src="<?= TEMPLATE ?>/assets/images/head-slider/осень жизни территория.jpg" alt="slide image">
-		</div>
-
-		<div class="main-slider__item swiper-slide">
-			<div class="main-slider__content">
-				<h2 class="main-slider__title">
-					В пансионате "Осень жизни" имеются
-				</h2>
-				<p class="main-slider__text">
-					номера для 2-х, 3-х человек, а также персональные комнаты. В каждой установлена современная мебель для уюта и комфорта. Наличие библиотеки и комнаты отдыха способствуют комфортному проживанию. Есть развивающие игры (лото, шашки, шахматы), организованы регулярные просмотры фильмов и телепередач.
-				</p>
-
-			</div>
-			<img class="main-slider__img" src="<?= TEMPLATE ?>/assets/images/head-slider/осень жизни комната отдыха.jpg" alt="slide image">
-		</div>
-	</div>
-
-</section>
+<?php endif; ?>
 
 <section class="benefits">
 
@@ -51,64 +38,45 @@
 		<div class="benefits-row">
 
 			<div class="benefits-item">
-				<img src="<?= TEMPLATE ?>/assets/images/section-01/free-icon-map.png" alt="картинка" class="benefits-item-icon">
-				<p class="benefits-item-desc">г. Донецк, ул. Фета, 37 "Б" (возле 2-го МРЭО)</p>
+				<img src="<?= TEMPLATE ?>/assets/images/section-01/free-icon-map.png" alt="Адрес пансиона Осень жизни" class="benefits-item-icon">
+				<p class="benefits-item-desc"><?= $this->set['address'] ?></p>
 			</div>
 
 			<div class="benefits-item">
-				<img src="<?= TEMPLATE ?>/assets/images/section-01/phone.png" alt="картинка" class="benefits-item-icon">
-				<a href="tel:+79999999999">+7(949) 407-90-93</a>
-				<a href="tel:+79999999999">+7(949) 613-89-80</a>
+				<img src="<?= TEMPLATE ?>/assets/images/section-01/phone.png" alt="Телефоны пансиона Осень жизни" class="benefits-item-icon">
+				<a href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone']) ?>"><?= $this->set['phone'] ?></a>
+				<a href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone_two']) ?>"><?= $this->set['phone_two'] ?></a>
 			</div>
 
 			<div class="benefits-item">
 				<img src="<?= TEMPLATE ?>/assets/images/section-01/free-icon-clock.png" alt="картинка" class="benefits-item-icon">
-				<p class="benefits-item-desc">09:00–18:00 / Пн–Пт</p>
+				<p class="benefits-item-desc"><?= $this->set['work_time'] ?></p>
 			</div>
 
 		</div>
 	</div>
 </section>
 
-<h1 class="page-title section-about__title section-about">О пансионе</h1>
+<?php if (!empty($information_section)) : ?>
 
-<div class="parent container">
+	<h1 class="page-title section-about__title section-about">О пансионе</h1>
 
-	<div class="about-company">
+	<div class="parent container">
 
-		<img src="<?= TEMPLATE ?>/assets/images/section-01/осень жизни-фасад.jpg" alt="О компании">
-		<h2 style="text-align: center;">Донецкий пансион осуществляет уход за пожилыми людьми и инвалидами нуждающимися в постоянном круглосуточном уходе</h2>
-		<p>Пансион работает с 1998 года и имеет благоустроенную закрытую территорию с плодоносящим садом беседками лавочками. Территориально расположен в Кировском районе города Донецка, в стороне от шумного города и пыльных дорог по адресу ул. Фета, 37 "Б" (возле 2-го МРЭО). </p>
-		<p style="font-weight: 900;">Проезд:</p>
-		<p>* Крытый рынок - маршрут 8 до остановки шахта "Лидиевка".<br>
-			* Ж/Д вокзал - маршрут 22 до остановки шахта "Лидиевка".<br>
-			* Южный автовокзал - маршрут 41 до остановки шахnа "Лидиевка".<br>
-		</p>
-		<p>Далее нужно пройти через шахтный двор в сторону поликлиники.</p>
+		<?php foreach ($information_section as $item) : ?>
 
-	</div>
-	<div class="about-company">
+			<div class="about-company">
+				<img src="<?= $this->img($item['img']) ?>" alt="<?= $item['name'] ?>">
 
+				<?= $item['content'] ?>
 
-		<img src="<?= TEMPLATE ?>/assets/images/section-01/08.jpg" alt="О компании">
+			</div>
 
-		<p>Жильцы пансиона проживают в 2-х этажных зданиях, оборудованных для въезда и выезда людей, перемещающихся на инвалидных колясках. Территория пансиона обустроена дорожками для прогулок, беседками для отдыха. Удобная мебель, живые цветы, картины на стенах, шкафы с книгами создают домашнюю атмосферу и уют. В стоимость проживания входит 4-х разовое полноценное питание и уход. Пансион предназначен для обеспечения благоприятных условий проживания граждан пенсионного возраста и предоставления проживающим престарелым гражданам социально-бытовой помощи, создание условий для активного образа жизни и отдыха. Планировка соответствует возрастным особенностям пациентов.</p>
-
-
-
-	</div>
-	<div class="about-company">
-
-		<img src="<?= TEMPLATE ?>/assets/images/section-01/04.jpg" alt="О компании">
-
-		<p>Высокий профессионализм и внимание наших сотрудников полностью освободят Вас и Ваших близких от изнурительных каждодневных бытовых хлопот, обеспечат индивидуальный уход за престарелыми родственниками. В пансионе для пожилых людей в обязательном порядке проводятся: контроль за артериальным давлением и пульсом, температурой тела. При необходимости - приглашаются узкие специалисты.</p>
-		<p style="font-size: 22px;">Целью работы пансиона является забота о пожилых гражданах, которые нуждаются в постоянном уходе, а также оказание помощи их родственникам, ведущим активный образ жизни.</p>
-
+		<?php endforeach; ?>
 
 	</div>
 
-
-</div>
+<?php endif; ?>
 
 <section class="blog">
 	<div class="container">
@@ -117,122 +85,35 @@
 			<?= $this->set['content'] ?>
 		</div>
 		<p class="blog__text" style="font-size: 24px; text-align: center;"><?= $this->set['short_content'] ?></p>
-		<!-- <div class="blog__items">
-
-		  <div class="blog-card">
-			 <div class="blog-card__link">
-				<img class="blog-card__image" src="<?= TEMPLATE ?>/assets/images/section-01/09.jpg" alt="blog img">
-			 </div>
-			 <div class="blog-card__content">
-				<div class="blog-card__info blog-info">
-				  <a class="blog-info__author" href="#">Милена В.</a>
-				  <span class="blog-info__date">06 Апреля, 2021</span>
-				</div>              
-				  <h3 class="blog-card__title">
-					 Функциональные кровати для лежачих больных
-				  </h3>
-				
-			 </div>
-		  </div>
-		  
-		</div> -->
 	</div>
 </section>
 
-<section class="section-about" style="margin-bottom: 75px;">
-	<div class="container section-contacts__container">
-		<div class="section__header-01" style="margin: 35px 0px;">
-			<h1 class="page-title section-about__title">Фото</h1>
-			<!-- <p class="section-about__text">Пансионат для пожилых людей "Осень жизни" в г.Донецке. Учереждение для пожилых людей и инвалидов. Мы обеспечиваем уход и заботу в круглосуточном режиме. Производится мониторинг состояния здоровья. В пансионате постоянно дежурит младший медицинский персонал с большим опытом работы. Мы рады дарить людям заботу, тепло и уют, чтобы каждый чувствовал свою значимость и ценность в этом мире</p> -->
+<?php if (!empty($fotos)) : ?>
 
-		</div>
-		<div class="seven__block">
-			<div class="seven__items">
-				<div class="seven__item">
-					<div class="seven__image">
-						<img src="/<?= TEMPLATE ?>/assets/images/section-01/01.jpg" alt="image">
-					</div>
-					<!-- <div class="seven__date">19 Jan 2023</div> -->
-					<!-- <div class="seven__subtitle">Здание пансионата</div> -->
-					<!--  <div class="seven__text">Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions...</div> -->
-					<!-- <div class="seven__buttons">
-							 <div class="seven__btn">Plumbing</div>
-							 <div class="seven__btn">Architecture</div>
-							 <div class="seven__btn">Maintenance</div>
-						</div> -->
-				</div>
-				<div class="seven__item">
-					<div class="seven__image">
-						<img src="/<?= TEMPLATE ?>/assets/images/section-01/02.jpg" alt="image">
-					</div>
-					<!-- <div class="seven__date">19 Jan 2023</div> -->
-					<!-- <div class="seven__subtitle">Пансионат</div> -->
-					<!--  <div class="seven__text">Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions...</div> -->
-					<!-- <div class="seven__buttons">
-							 <div class="seven__btn">Plumbing</div>
-							 <div class="seven__btn">Architecture</div>
-							 <div class="seven__btn">Maintenance</div>
-						</div> -->
-				</div>
-				<div class="seven__item">
-					<div class="seven__image">
-						<img src="/<?= TEMPLATE ?>/assets/images/section-01/06.jpg" alt="image">
-					</div>
-					<!-- <div class="seven__date">19 Jan 2023</div> -->
-					<!-- <div class="seven__subtitle">Территория пансионата</div> -->
-					<!--  <div class="seven__text">Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions...</div> -->
-					<!-- <div class="seven__buttons">
-							 <div class="seven__btn">Plumbing</div>
-							 <div class="seven__btn">Architecture</div>
-							 <div class="seven__btn">Maintenance</div>
-						</div> -->
-				</div>
-				<div class="seven__item">
-					<div class="seven__image">
-						<img src="/<?= TEMPLATE ?>/assets/images/section-01/11.jpg" alt="image">
-					</div>
-					<!-- <div class="seven__date">19 Jan 2023</div> -->
-					<!-- <div class="seven__subtitle">Опытный персонал</div> -->
-					<!--  <div class="seven__text">Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions...</div> -->
-					<!-- <div class="seven__buttons">
-							 <div class="seven__btn">Plumbing</div>
-							 <div class="seven__btn">Architecture</div>
-							 <div class="seven__btn">Maintenance</div>
-						</div> -->
-				</div>
-				<div class="seven__item">
-					<div class="seven__image">
-						<img src="/<?= TEMPLATE ?>/assets/images/section-01/осень жизни - дедмороз.jpg" alt="image">
-					</div>
-					<!-- <div class="seven__date">19 Jan 2023</div> -->
-					<!-- <div class="seven__subtitle">Столовая</div> -->
-					<!--  <div class="seven__text">Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions...</div> -->
-					<!-- <div class="seven__buttons">
-							 <div class="seven__btn">Plumbing</div>
-							 <div class="seven__btn">Architecture</div>
-							 <div class="seven__btn">Maintenance</div>
-						</div> -->
-				</div>
-				<div class="seven__item">
-					<div class="seven__image">
-						<img src="/<?= TEMPLATE ?>/assets/images/section-01/праздник осень жизни.jpg" alt="image">
-					</div>
-					<!-- <div class="seven__date">19 Jan 2023</div> -->
-					<!-- <div class="seven__subtitle">Столовая</div> -->
-					<!--  <div class="seven__text">Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions...</div> -->
-					<!-- <div class="seven__buttons">
-							 <div class="seven__btn">Plumbing</div>
-							 <div class="seven__btn">Architecture</div>
-							 <div class="seven__btn">Maintenance</div>
-						</div> -->
+	<section class="section-about" style="margin-bottom: 75px;">
+		<div class="container section-contacts__container">
+			<div class="section__header-01" style="margin: 35px 0px;">
+				<h1 class="page-title section-about__title">Фото</h1>
+			</div>
+			<div class="seven__block">
+				<div class="seven__items">
+
+					<?php foreach ($fotos as $item) : ?>
+
+						<div class="seven__item">
+							<div class="seven__image">
+								<img src="<?= $this->img($item['img']) ?>" alt="<?= $item['name'] ?>">
+							</div>
+						</div>
+
+					<?php endforeach; ?>
+
 				</div>
 			</div>
 		</div>
+	</section>
 
-
-
-	</div>
-</section>
+<?php endif; ?>
 
 <!-- section-contacts -->
 <section class="section-contacts">
@@ -295,3 +176,30 @@
 	</div>
 </section>
 <!-- /.section-contacts -->
+
+<?php if (!empty($questions)) : ?>
+
+	<section8 class="page-eight eight">
+		<div class="eight__container">
+
+			<h2 class="title blog__title" style="text-align: center; font-size: 28px;">Часто задаваемые вопросы:</h2>
+
+			<div class="eight__rightside">
+				<div data-spollers class="spollers">
+
+					<?php foreach ($questions as $item) : ?>
+
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title"><?= $item['name'] ?></button>
+							<div class="spollers__body"><?= $item['content'] ?></div>
+						</div>
+
+					<?php endforeach; ?>
+
+				</div>
+			</div>
+
+		</div>
+	</section8>
+
+<?php endif; ?>

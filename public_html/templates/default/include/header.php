@@ -6,17 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+	<link rel="icon" href="<?= SITE_URL ?>/favicon.ico" type="image/x-icon">
 
+	<meta name="description" content="Пансион для пожилых людей и инвалидов в Донецке ДНР <?= $this->set['phone'] ?>, <?= $this->set['phone_two'] ?>. Круглосуточная забота о ваших близких. Опытный персонал. Контроль за состоянием здоровья. Домашний уют и комфорт. Уход 24/7.">
+	<meta name="keywords" content="Пансион для пожилых людей и инвалидов в Донецке, ДНР">
 
-	<meta name="description" content="Сайт Построен — создание и продвижение сайтов">
-	<meta name="keywords" content="создать сайт в Донецке, сделать сайт в Донецке, интернет-магазин в Донецке, визитки">
+	<meta property="og:title" content="<?= $this->set['keywords'] ?>" />
+	<meta property="og:description" content="Пансион для пожилых людей и инвалидов в Донецке. Уход 24/7 с проживанием для пожилых в Донецке. Комфортное проживание. Уборка, смена белья. Связь с родными" />
+	<meta property="og:image" content="<?= $this->img($this->set['img_logo']) ?>" />
 
-	<meta property="og:title" content="Сайт Построен — создание и продвижение сайтов, дизайн визиток" />
-	<meta property="og:description" content="Сайт Построен — создание и продвижение сайтов в Донецке" />
-	<meta property="og:image" content="" />
-
-
-
+	<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+	<link rel="manifest" href="/favicon/site.webmanifest" />
 
 	<title>Пансион | Осень жизни | Донецк</title>
 
@@ -38,9 +41,9 @@
 	<header class="header-page">
 		<div class="container header-page__container">
 			<div class="header-page__start">
-				<a href="/" class="logo">
-					<img class="logo__img lazy" src="<?= TEMPLATE ?>/assets/images/section-01/логотип-осень жизни.jpg"
-						alt="sait postroen">
+				<a href="<?= $this->alias() ?>" class="logo">
+					<img class="logo__img lazy" src="<?= $this->img($this->set['img_logo']) ?>"
+						alt="<?= $this->set['name'] ?>">
 				</a>
 			</div>
 			<div class="header-page__end">
@@ -65,8 +68,8 @@
 					</ul>
 				</nav>
 				<div class="phone">
-					<a class="phone__item header-page__phone" href="tel:+79999999999">+7 (949) 407-90-93</a>
-					<a class="phone__item header-page__phone" href="tel:+79999999999">+7 (949) 613-89-80</a>
+					<a class="phone__item header-page__phone" href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone']) ?>"><?= $this->set['phone'] ?></a>
+					<a class="phone__item header-page__phone" href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone_two']) ?>"><?= $this->set['phone_two'] ?></a>
 				</div>
 				<div class="header-page__hamburger">
 					<button class="btn-menu" type="button" data-popup="popup-menu">

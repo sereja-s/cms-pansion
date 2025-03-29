@@ -23,7 +23,7 @@ abstract class BaseUser extends \core\base\controller\BaseController
 	/** 
 	 * свойство с данными для меню (каталог)
 	 */
-	protected $menu;
+	//protected $menu;
 
 	/** 
 	 * св-во в котором будем держать данные пользователя (Выпуск №145)
@@ -35,8 +35,8 @@ abstract class BaseUser extends \core\base\controller\BaseController
 	 */
 	protected $socials;
 
-	protected $site_categories;
-	protected $websites;
+	//protected $site_categories;
+	//protected $websites;
 
 	protected function inputData()
 	{
@@ -60,12 +60,12 @@ abstract class BaseUser extends \core\base\controller\BaseController
 		//-------------------------------------------------------------------------------------------------------------//
 
 		// получим в св-во: $this->site_categories, то что хранится в соответствующей таблице БД
-		$this->site_categories = $this->model->get('site_categories', [
+		/* $this->site_categories = $this->model->get('site_categories', [
 			'where' => ['visible' => 1, 'parent_id' => null],
 			'order' => ['menu_position']
-		]);
+		]); */
 
-		$this->websites = $this->model->get('websites', [
+		/* $this->websites = $this->model->get('websites', [
 			'where' => ['visible' => 1],
 			'join' => [
 				'site_categories' => [
@@ -73,11 +73,11 @@ abstract class BaseUser extends \core\base\controller\BaseController
 					'on' => ['parent_id', 'id']
 				]
 			]
-		]);
+		]); */
 
 		// к пунктам меню присоединили таблицу с названиями секций (они будут выводиться в выпадающем списке в админке) к 
 		// которым происходит переход при нажатии на них
-		$this->menu['information'] = $this->model->get('information', [
+		/* $this->menu['information'] = $this->model->get('information', [
 			'where' => ['visible' => 1, 'show_top_menu' => 1,],
 			'join' => [
 				'sections' => [
@@ -85,7 +85,7 @@ abstract class BaseUser extends \core\base\controller\BaseController
 					'on' => ['parent_id', 'id']
 				]
 			]
-		]);
+		]); */
 
 		// получим в св-во: $this->socials, то что хранится в соответствующей таблице БД
 		$this->socials = $this->model->get('socials', [

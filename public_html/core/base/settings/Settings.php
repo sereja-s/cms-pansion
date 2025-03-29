@@ -82,10 +82,9 @@ class Settings
 
 		'settings' => ['name' => 'Настройки (о сайте)'],
 		'section_top' => ['name' => 'Слайды'],
-		'information' => ['name' => 'Пункты меню'],
-		'sections' => ['name' => 'Указатель на раздел'],
-		'websites' => ['name' => 'Сайты'],
-		'site_categories' => ['name' => 'Виды сайтов'],
+		'information_section' => ['name' => 'О нас'],
+		'foto' => ['name' => 'Фото'],
+		'questions' => ['name' => 'Вопросы'],
 		'socials' => ['name' => 'Соц.сети'],
 	];
 
@@ -187,8 +186,8 @@ class Settings
 		'discount' => ['int' => true],
 		'login' => ['empty' => true, 'trim' => true],
 		'password' => ['crypt' => true, 'empty' => true],
-		'keywords' => ['count' => 70, 'trim' => true],
-		'description' => ['count' => 160, 'trim' => true]
+		'keywords' => ['count' => 1000, 'trim' => true],
+		'description' => ['count' => 1000, 'trim' => true]
 	];
 
 	// Объявим метод, который будет возвращать указанные выше свойства
